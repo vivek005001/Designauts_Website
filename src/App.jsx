@@ -5,6 +5,7 @@ import Navbar from './assets/Navbar'
 import Home from './components/Home'
 import About from './components/About'
 import Artworks from './components/Artworks'
+import Contact from './components/Contact'
 
 function App() {
   
@@ -15,6 +16,8 @@ function App() {
         <Route path="/" element={<h1>Home</h1>} />
         <Route path="/about" element={<h1>About</h1>} />
         <Route path="/artworks" element={<h1>Artworks</h1>} />
+        <Route path="/contact" element={<h1>Contact</h1>} />
+        
       </Routes>
     </>
   )
