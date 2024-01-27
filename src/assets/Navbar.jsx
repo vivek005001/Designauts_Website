@@ -11,7 +11,7 @@ import AnimatedText from "./AnimatedText";
 
 // ... (imports)
 
-function Navbar() {
+function Navbar({textLeave,textEnter}) {
   const linkStyle = {
     color: "rgba(160, 160, 160, 1)",
   };
@@ -47,6 +47,7 @@ function Navbar() {
 
           <div className="flex justify-end items-center flex-grow ml-4">
             <Link
+              onMouseEnter={textEnter} onMouseLeave={textLeave}
               to="/contact"
               style={linkStyle}
               className={`mx-2 h-8 px-6 py-1 rounded transition-transform transform focus:outline-none text-uppercase ${isOpen ? 'hidden' : ''}`}
@@ -55,13 +56,14 @@ function Navbar() {
             </Link>
 
             <span
+              onMouseEnter={textEnter} onMouseLeave={textLeave}
               style={linkStyle}
               className={`mx-2 h-8 px-6 py-1 rounded transition-transform transform focus:outline-none text-uppercase ${isOpen ? 'hidden' : ''}`}
             >
               MENU
             </span>
 
-            <div ref={ref}>
+            <div ref={ref} onMouseEnter={textEnter} onMouseLeave={textLeave}>
               <Hamburger
                 toggled={isOpen}
                 size={18}
@@ -81,6 +83,7 @@ function Navbar() {
       <AnimatePresence onExitComplete={() => setLinkAnimationKey(0)}>
         {isOpen && (
           <motion.div
+            onMouseEnter={textEnter} onMouseLeave={textLeave}
             key={linkAnimationKey}
             initial="hidden"
             animate="visible"
@@ -91,6 +94,7 @@ function Navbar() {
           >
             <div className="pt-20">
               <Link
+                onMouseEnter={textEnter} onMouseLeave={textLeave}
                 to="/artworks"
                 style={linkStyle}
                 className={`mx-2 h-8 px-6 py-1 rounded transition-transform transform hover:scale-90 active:scale-95 focus:outline-none text-uppercase ${
@@ -98,6 +102,7 @@ function Navbar() {
                 }`}
               >
                 <motion.div
+                  onMouseEnter={textEnter} onMouseLeave={textLeave}
                   variants={linkAnimationVariants}
                   initial="hidden"
                   animate="visible"
@@ -107,6 +112,7 @@ function Navbar() {
                 </motion.div>
               </Link>
               <Link
+                onMouseEnter={textEnter} onMouseLeave={textLeave}
                 to="/about"
                 style={linkStyle}
                 className="mx-2 h-8 px-6 py-1 rounded transition-transform transform hover:scale-90 active:scale-95 focus:outline-none text-uppercase"
