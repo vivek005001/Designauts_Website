@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
 import { useClickAway } from "react-use";
 import blackLogo from "../images/designauts_logo_black.png";
-
 function Navbar({ textLeave, textEnter }) {
   const linkStyle = {
     color: "rgba(160, 160, 160, 1)",
@@ -58,7 +57,7 @@ function Navbar({ textLeave, textEnter }) {
 
   return (
     <header className="relative">
-      <div className="fixed top-0 w-full z-50">
+      <div className="fixed top-0 w-full z-50" onMouseEnter={textEnter} onMouseLeave={textLeave}>
         <div className="flex items-center p-4 py-8 mb-10 mt-2 h-14 mx-auto max-w-7xl text-white">
           <motion.div
             initial={{ opacity: 0 }}
@@ -77,8 +76,6 @@ function Navbar({ textLeave, textEnter }) {
 
           <div className="flex justify-end items-center flex-grow ml-4">
             <Link
-              onMouseEnter={textEnter}
-              onMouseLeave={textLeave}
               to="/contact"
               style={linkStyle}
               className={`mx-2 h-8 px-6 py-1 rounded transition-transform transform focus:outline-none text-uppercase ${
@@ -89,15 +86,13 @@ function Navbar({ textLeave, textEnter }) {
             </Link>
 
             <span
-              onMouseEnter={textEnter}
-              onMouseLeave={textLeave}
               style={linkStyle}
               className={`mx-2 h-8 px-6 py-1 rounded transition-transform transform focus:outline-none text-uppercase`}
             >
               MENU
             </span>
 
-            <div ref={ref} onMouseEnter={textEnter} onMouseLeave={textLeave}>
+            <div ref={ref}>
               <Hamburger
                 toggled={isOpen}
                 size={18}
@@ -117,8 +112,6 @@ function Navbar({ textLeave, textEnter }) {
       <AnimatePresence onExitComplete={() => setLinkAnimationKey(0)}>
         {isOpen && (
           <motion.div
-            onMouseEnter={textEnter}
-            onMouseLeave={textLeave}
             key={linkAnimationKey}
             initial="hidden"
             animate="visible"
@@ -127,86 +120,70 @@ function Navbar({ textLeave, textEnter }) {
             transition={transition}
             className="fixed top-0 left-0 w-full h-full bg-white text-black p-10 z-40"
           >
-            <div className=" pt-32 pl-32">
+            <div onMouseEnter={textEnter} onMouseLeave={textLeave} className=" pt-32 h-full pl-32 flex flex-col gap-10">
               <Link
-                onMouseEnter={textEnter}
-                onMouseLeave={textLeave}
                 to="/artworks"
                 style={divLinkstyle}
-                className={`mx-2 h-8 px-6 py-1 text-2xl rounded transition-transform transform hover:scale-90 active:scale-95 focus:outline-none text-uppercase ${
+                className={`mx-2 h-8 w-[max-content] px-6 py-1 text-2xl rounded transition-transform transform hover:scale-90 active:scale-95 focus:outline-none text-uppercase ${
                   isOpen ? "" : "hidden"
                 }`}
               >
-                <motion.div
-                  onMouseEnter={textEnter}
-                  onMouseLeave={textLeave}
+                <motion.span
                   variants={linkAnimationVariants}
                   initial="hidden"
                   animate="visible"
                   transition={{ delay: 1, duration: 0.5 }}
                 >
                   ARTWORKS
-                </motion.div>
+                </motion.span>
               </Link>
               <Link
-                onMouseEnter={textEnter}
-                onMouseLeave={textLeave}
                 to="/about"
                 style={divLinkstyle}
-                className={`mx-2 h-8 px-6 py-1 rounded text-2xl transition-transform transform hover:scale-90 active:scale-95 focus:outline-none text-uppercase ${
+                className={`mx-2 h-8 px-6 w-[max-content] py-1 rounded text-2xl transition-transform transform hover:scale-90 active:scale-95 focus:outline-none text-uppercase ${
                   isOpen ? "" : "hidden"
                 }`}
               >
-                <motion.div
-                  onMouseEnter={textEnter}
-                  onMouseLeave={textLeave}
+                <motion.span
                   variants={linkAnimationVariants}
                   initial="hidden"
                   animate="visible"
                   transition={{ delay: 1.3, duration: 0.5 }}
                 >
                   ABOUT
-                </motion.div>
+                </motion.span>
               </Link>
               <Link
-                onMouseEnter={textEnter}
-                onMouseLeave={textLeave}
                 to="/team"
                 style={divLinkstyle}
-                className={`mx-2 h-8 px-6 py-1 rounded text-2xl transition-transform transform hover:scale-90 active:scale-95 focus:outline-none text-uppercase ${
+                className={`mx-2 h-8 px-6 py-1 w-[max-content] rounded text-2xl transition-transform transform hover:scale-90 active:scale-95 focus:outline-none text-uppercase ${
                   isOpen ? "" : "hidden"
                 }`}
               >
-                <motion.div
-                  onMouseEnter={textEnter}
-                  onMouseLeave={textLeave}
+                <motion.span
                   variants={linkAnimationVariants}
                   initial="hidden"
                   animate="visible"
                   transition={{ delay: 1.6, duration: 0.5 }}
                 >
                   TEAM
-                </motion.div>
+                </motion.span>
               </Link>
               <Link
-                onMouseEnter={textEnter}
-                onMouseLeave={textLeave}
                 to="/contact"
                 style={divLinkstyle}
-                className={`mx-2 h-8 px-6 py-1 rounded text-2xl transition-transform transform hover:scale-90 active:scale-95 focus:outline-none text-uppercase ${
+                className={`mx-2 h-8 px-6 py-1 w-[max-content] rounded text-2xl transition-transform transform hover:scale-90 active:scale-95 focus:outline-none text-uppercase ${
                   isOpen ? "" : "hidden"
                 }`}
               >
-                <motion.div
-                  onMouseEnter={textEnter}
-                  onMouseLeave={textLeave}
+                <motion.span
                   variants={linkAnimationVariants}
                   initial="hidden"
                   animate="visible"
                   transition={{ delay: 1.9, duration: 0.5 }}
                 >
                   CONTACT
-                </motion.div>
+                </motion.span>
               </Link>
             </div>
           </motion.div>

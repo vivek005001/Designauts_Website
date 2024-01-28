@@ -19,13 +19,13 @@ body {
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: 100;
+    z-index: 999;
   }
 
   @font-face {
     font-family: 'Charis';
     /* src: url('src/assets/Vollkorn-Semibold.ttf') format('truetype'); */
-    src: url('/Users/vivek/Designauts Website/src/assets/Lovelyn Free Personal Use.ttf') format('truetype');
+    src: url('./assets/Lovelyn-Free-Personal-Use.ttf') format('truetype');
     /* Add additional formats if needed (e.g., woff, woff2) */
   }
   
