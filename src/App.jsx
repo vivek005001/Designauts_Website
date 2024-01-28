@@ -10,6 +10,7 @@ import Team from './components/Team'
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Footer from './assets/Footer'
+import MoreArtWorks from './components/MoreArtWorks'
 
 function App() {
   const [mousePosition, setMousePosition] = useState({
@@ -61,11 +62,12 @@ function App() {
         animate={cursorVariant}
       />
       <Routes>
-        <Route path="/" element={<Home onMouseEnter={textEnter} onMouseLeave={textLeave}/>} />
-        <Route path="/about" element={<About onMouseEnter={textEnter} onMouseLeave={textLeave}/>} />
+        <Route path="/" element={<Home textEnter = {textEnter} textLeave = {textLeave}/>} />
+        <Route path="/about" element={<About textEnter = {textEnter} textLeave = {textLeave}/>} />
         <Route path="/artworks" element={<Artworks textEnter = {textEnter} textLeave = {textLeave} />} />
-        <Route path="/contact" element={<Contact onMouseEnter={textEnter} onMouseLeave={textLeave}/>} />
-        <Route path="/team" element={<Team onMouseEnter={textEnter} onMouseLeave={textLeave}/>} />
+        <Route path="/contact" element={<Contact textEnter = {textEnter} textLeave = {textLeave}/>} />
+        <Route path="/team" element={<Team textEnter = {textEnter} textLeave = {textLeave}/>} />
+        <Route path="/more-artworks" element={<MoreArtWorks textEnter = {textEnter} textLeave = {textLeave}/>} />
         
       </Routes>
       <Footer />
