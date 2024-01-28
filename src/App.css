@@ -21,3 +21,15 @@ body {
     pointer-events: none;
     z-index: 100;
   }
+
+  @font-face {
+    font-family: 'Charis';
+    /* src: url('src/assets/Vollkorn-Semibold.ttf') format('truetype'); */
+    src: url('/Users/vivek/Designauts Website/src/assets/Lovelyn Free Personal Use.ttf') format('truetype');
+    /* Add additional formats if needed (e.g., woff, woff2) */
+  }
+  
+  body {
+    font-family: 'Charis', sans-serif;
+    font-weight: bold;
+  }

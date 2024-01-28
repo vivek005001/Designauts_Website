@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react'
+import MainImg from '../images/Designauts_Main.png'
 
-function HomeDescription() {
+const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-screen ">
-      <div className="font-bold text-8xl">Lit-Soc, IIT Mandi</div>
-      <div className="italic  text-gray-400 text-2xl">Literary Society of IIT Mandi</div>
+    <div className='text-white text-2xl pt-28 w-screen h-screen flex items-center justify-center'>
+      <img src={MainImg}></img>
     </div>
-  );
+  )
 }
 
-export default HomeDescription;
+export default Home

@@ -81,7 +81,7 @@ const Artworks = ({textLeave,textEnter}) => {
         <div className="flex flex-col gap-[10rem]">
         {ArtWorksArr.map((artwork, index) => {
           const show = (scrolled > (350 + index*500 - index*20)) && (scrolled < ((350 + index*450) + 300 + index*50));
-          const margin_val = (200*index).toString() + "px";
+          const margin_val = (250*index).toString() + "px";
           return (
             <>
             <div key={index} className={`fixed z-30 top-[50vh] -rotate-90 left-0  overflow-visible`} >
