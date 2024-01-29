@@ -10,7 +10,7 @@ const FlipCard = (image, radius, instaID, LinkedIn) => {
       <div className={`flip-card-inner w-${radius} h-${radius} mx-auto`}>
         <img src={image} className={`flip-card-front w-${radius} h-${radius} rounded-full`} />
         <div className={`flip-card-back w-${radius} h-${radius} rounded-full`}>
-          <p className="text-[#000000] text-center my-3 mt-8">Find me here</p>
+          <p className="text-[#000000] text-center my-5">Find me here</p>
           <div className="flex justify-center items-center">
             <a href={`https://instagram.com/${instaID}`} target="_blank" className="mx-auto">
               <img src={ig} alt="instagram" className="w-12 h-12 mx-auto mb-4" />
@@ -25,21 +25,12 @@ const FlipCard = (image, radius, instaID, LinkedIn) => {
   )
 }
 
-const Members = (image, name, instaID, LinkedIn, textLeave, textEnter) => {
+const Members = (image, name, instaID, LinkedIn) => {
   return (
     <div>
+      {/* <img src={image} className='rounded-full w-36 h-36 mx-auto' /> */}
       {FlipCard(image, 36, instaID, LinkedIn)}
-      <p onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-center text-2xl pt-2 pb-5 '>{name}</p>
-    </div>
-  )
-}
-
-const Cord = (image, name, instaID, LinkedIn) => {
-  return (
-    <div>
-      {FlipCard(image, 48, instaID, LinkedIn)}
-      <p className='text-center text-4xl pt-2'>{name}</p>
-      <p className='text-center text-2xl pt-2'>Coordinator</p>
+      <p className='text-center text-2xl pt-2 pb-5'>{name}</p>
     </div>
   )
 }
@@ -47,6 +38,7 @@ const Cord = (image, name, instaID, LinkedIn) => {
 const CoCord = (image, name, instaID, LinkedIn) => {
   return (
     <div>
+      {/* <img src={image} className='rounded-full w-44 h-44 mx-auto' /> */}
       {FlipCard(image, 44, instaID, LinkedIn)}
       <p className='text-center text-3xl pt-2'>{name}</p>
       <p className='text-center text-xl pt-2'>Co-coordinator</p>
@@ -54,10 +46,10 @@ const CoCord = (image, name, instaID, LinkedIn) => {
   )
 }
 
-const PastCordi = (image, name, year, instaID, linkedIn) => {
+const PastCordi = (image, name, year) => {
   return (
     <div>
-      {FlipCard(image, 44, instaID, LinkedIn)}
+      <img src={image} className='rounded-full w-36 mx-auto' />
       <p className='text-center text-3xl pt-2'>{name}</p>
       <p className='text-center text-xl pt-2'>{year}</p>
     </div>
@@ -67,8 +59,10 @@ const PastCordi = (image, name, year, instaID, linkedIn) => {
 const Team = () => {
   return (
     <div>
-      <div className='w-72 h-60 py-40 mx-auto pt-48 '>
-        {Cord('/pfps/vivek.jpg', 'Vivek Aggarwal', 'rttfgyjhk', 'sgfhdxcgb')}
+      <div className='w-72 h-60 py-40 mx-auto '>
+        {FlipCard("/pfps/vivek.jpg", 48, "vivekaggarwal05", "https://mail.google.com/compose?to=b22145@students.iitmandi.ac.in")}
+        <p className='text-center text-4xl pt-2'>Vivek Aggarwal</p>
+        <p className='text-center text-2xl pt-2'>Coordinator</p>
       </div>
 
       <div className='grid grid-cols-3 place-items-center py-44'>
