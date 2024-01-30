@@ -46,10 +46,11 @@ const CoCord = (image, name, instaID, LinkedIn) => {
   )
 }
 
-const PastCordi = (image, name, year) => {
+const PastCordi = (image, name, year, instaID, LinkedIn) => {
   return (
     <div>
-      <img src={image} className='rounded-full w-36 mx-auto' />
+      {/* <img src={image} className='rounded-full w-36 mx-auto' /> */}
+      {FlipCard(image, 44, instaID, LinkedIn)}
       <p className='text-center text-3xl pt-2'>{name}</p>
       <p className='text-center text-xl pt-2'>{year}</p>
     </div>
@@ -60,10 +61,11 @@ const Team = () => {
   return (
     <div>
       <div className='w-72 h-60 py-40 mx-auto '>
-        {FlipCard("/pfps/vivek.jpg", 48, "vivekaggarwal05", "https://mail.google.com/compose?to=b22145@students.iitmandi.ac.in")}
+        {FlipCard('/pfps/vivek.jpg', 48, "vivekaggarwal05", "https://mail.google.com/compose?to=b22145@students.iitmandi.ac.in")}
         <p className='text-center text-4xl pt-2'>Vivek Aggarwal</p>
         <p className='text-center text-2xl pt-2'>Coordinator</p>
       </div>
+
 
       <div className='grid grid-cols-3 place-items-center py-44'>
         {CoCord('/pfps/aryan.jpg', 'Aryan Singh')}
