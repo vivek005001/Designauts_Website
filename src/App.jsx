@@ -6,7 +6,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Artworks from './components/Artworks'
 import Contact from './components/Contact'
-import Team from './components/Team1'
+import Team from './components/Team'
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Footer from './assets/Footer'
