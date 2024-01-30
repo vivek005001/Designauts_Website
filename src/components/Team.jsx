@@ -61,7 +61,23 @@ const Team = () => {
   return (
     <div>
       <div className='w-72 h-60 py-40 mx-auto '>
-        {FlipCard('/pfps/vivek.jpg', 48, "vivekaggarwal05", "https://mail.google.com/compose?to=b22145@students.iitmandi.ac.in")}
+        {/* {FlipCard('/pfps/vivek.jpg', 48, "vivekaggarwal05", "https://mail.google.com/compose?to=b22145@students.iitmandi.ac.in")} */}
+        <div className="flip-card">
+          <div className={`flip-card-inner w-48 h-48 mx-auto`}>
+            <img src='/pfps/vivek.jpg' className={`flip-card-front w-48 h-48 rounded-full`} />
+            <div className={`flip-card-back w-48 h-48 rounded-full`}>
+              <p className="text-[#000000] text-center my-5">Find me here</p>
+              <div className="flex justify-center items-center">
+                <a href={`https://instagram.com/blablabla`} target="_blank" className="mx-auto">
+                  <img src={ig} alt="instagram" className="w-12 h-12 mx-auto mb-4" />
+                </a>
+                <a href={`blablabla`} target="_blank" className="mx-auto">
+                  <img src={li} alt="linkedIn" className="w-10 h-10 mx-auto mb-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
         <p className='text-center text-4xl pt-2'>Vivek Aggarwal</p>
         <p className='text-center text-2xl pt-2'>Coordinator</p>
       </div>

@@ -1,35 +1,35 @@
 body {
-    background-color: rgb(0, 0, 0);
-    color: white;
-    margin: 0;
-    padding: 0;
-  }
-  
-  html {
-    margin: 0;
-    padding: 0;
-  }
+  background-color: rgb(0, 0, 0);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
 
-  .cursor {
-    background-color: white;
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 999;
-  }
+html {
+  margin: 0;
+  padding: 0;
+}
 
-  @font-face {
-    font-family: 'Charis';
-    /* src: url('src/assets/Vollkorn-Semibold.ttf') format('truetype'); */
-    src: url('./assets/Lovelyn-Free-Personal-Use.ttf') format('truetype');
-    /* Add additional formats if needed (e.g., woff, woff2) */
-  }
-  
-  body {
-    font-family: 'Charis', sans-serif;
-    font-weight: bold;
-  }
+.cursor {
+  background-color: white;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+@font-face {
+  font-family: 'Charis';
+  src: url('src/assets/Vollkorn-Semibold.ttf') format('truetype');
+  /* src: url('./assets/Lovelyn-Free-Personal-Use.ttf') format('truetype'); */
+  /* Add additional formats if needed (e.g., woff, woff2) */
+}
+
+body {
+  font-family: 'Charis', sans-serif;
+  font-weight: bold;
+}
