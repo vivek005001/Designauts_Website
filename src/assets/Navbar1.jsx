@@ -1,3 +1,4 @@
+// import './nav.css'; // Import Tailwind CSS
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/designauts_logo_white.png";
@@ -8,6 +9,11 @@ import AnimatedText from "./AnimatedText"
 import blackLogo from "../images/designauts_logo_black.png";
 
 function Navbar({ textLeave, textEnter }) {
+  const [toggle, setToggle] = useState(false);
+  const [y, setY] = useState(100);
+  const [c, setC] = useState(100);
+  const [isOpen, setOpen] = useState(false);
+
   const linkStyle = {
     color: "rgba(160, 160, 160, 1)",
   };
@@ -16,7 +22,6 @@ function Navbar({ textLeave, textEnter }) {
     color: "black",
   };
 
-  const [isOpen, setOpen] = useState(false);
   const [linkAnimationKey, setLinkAnimationKey] = useState(0);
   const [showBlackLogo, setShowBlackLogo] = useState(false);
 
@@ -42,11 +47,6 @@ function Navbar({ textLeave, textEnter }) {
     return () => clearTimeout(timeoutId);
   }, [isOpen]);
 
-  const variants = {
-  hidden: { y: "-100%", clipPath: "circle(0% at 50% 0)" },
-  visible: { y: 0, opacity: 1, clipPath: "circle(100% at 50% 0)" },
-  };
-
   const transition = {
     duration: 1,
     ease: "easeIn",
@@ -57,73 +57,59 @@ function Navbar({ textLeave, textEnter }) {
     visible: { opacity: 1, y: 0 },
   };
 
+  const lerp = (start, end, t) => start * (1 - t) + end * t;
+
+  const animate = () => {
+    if (toggle) {
+      setY(lerp(y, 0, 0.055));
+      setC(lerp(c, 0, 0.075));
+    } else {
+      setY(lerp(y, 100, 0.055));
+      setC(lerp(c, 100, 0.075));
+    }
+  };
+
+  React.useEffect(() => {
+    const animationId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationId);
+  }, [toggle, y, c]);
+
+  const handleToggle = () => {
+    setTimeout(() => {
+      setToggle(!toggle);
+    }, 300);
+
+    if (toggle) {
+      // Handle menu close
+    } else {
+      setTimeout(() => {
+        // Handle menu open
+      }, 1000);
+    }
+  };
+
   return (
-    <header className="relative">
-      <div className="fixed top-0 w-full z-50" onMouseEnter={textEnter} onMouseLeave={textLeave}>
-        <div className="flex items-center p-4 py-8 mb-10 mt-2 h-14 mx-auto max-w-7xl text-white">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 10 }} // Add a smooth transition duration
-          >
-            <Link to="/" className="cursor-pointer">
-              <img
-                src={showBlackLogo ? blackLogo : logo}
-                alt="logo"
-                className="w-40 pr-2 my-1 ml-2"
-              />
-            </Link>
-          </motion.div>
-
-          <div className="flex justify-end items-center flex-grow ml-4">
-            <Link
-              to="/contact"
-              style={linkStyle}
-              className={`mx-2 h-8 px-6 py-1 rounded transition-transform transform focus:outline-none text-uppercase ${
-                isOpen ? "hidden" : ""
-              }`}
-            >
-              CONTACT
-            </Link>
-
-            <span
-              style={linkStyle}
-              className={`mx-2 h-8 px-6 py-1 rounded transition-transform transform focus:outline-none text-uppercase`}
-            >
-              MENU
-            </span>
-
-            <div ref={ref}>
-              <Hamburger
-                toggled={isOpen}
-                size={18}
-                toggle={() => {
-                  setOpen(!isOpen);
-                  if (!isOpen) {
-                    setLinkAnimationKey((prevKey) => prevKey + 1);
-                  }
-                }}
-                color={linkStyle.color}
-              />
-            </div>
-          </div>
+    <div className="wrapper">
+      <div className="header">
+        <div className={`menu-tog ${toggle ? 'active' : ''}`} onClick={handleToggle}>
+          <span></span>
+          <span></span>
         </div>
       </div>
 
-      <AnimatePresence onExitComplete={() => setLinkAnimationKey(0)}>
-        {isOpen && (
-          <motion.div
-            key={linkAnimationKey}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={variants}
-            transition={transition}
-            className="fixed top-0 left-0 w-full h-full bg-white text-black p-10 z-40"
-          >
-            
-            <div onMouseEnter={textEnter} onMouseLeave={textLeave} className=" pt-32 h-full lg:pl-32 flex flex-col gap-10"> 
+      <svg className="transition" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path
+          className="path"
+          stroke="black"
+          fill="#fcc42a"
+          strokeWidth="3px"
+          vectorEffect="non-scaling-stroke"
+          d={`M 0 ${y} L 0 100 100 100 100 ${y} C ${50} ${c}, ${50} ${c}, 0 ${y}`}
+        />
+      </svg>
+
+      <ul className={toggle ? '' : 'active'}>
+      <div onMouseEnter={textEnter} onMouseLeave={textLeave} className=" pt-32 h-full lg:pl-32 flex flex-col gap-10"> 
               <Link
                 to="/artworks"
                 style={divLinkstyle}
@@ -189,10 +175,8 @@ function Navbar({ textLeave, textEnter }) {
                 </motion.span>
               </Link>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+      </ul>
+    </div>
   );
 }
 

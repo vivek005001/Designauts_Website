@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import {Routes, Route} from 'react-router-dom'
+// import Navbar from './assets/Navbar'
 import Navbar from './assets/Navbar'
 import Home from './components/Home'
 import About from './components/About'
@@ -11,6 +12,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Footer from './assets/Footer'
 import MoreArtWorks from './components/MoreArtWorks'
+
 
 function App() {
   const [mousePosition, setMousePosition] = useState({
