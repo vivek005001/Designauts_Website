@@ -8,7 +8,7 @@ const quote = {
   animate: {
     opacity: 1,
     transition: {
-      delay: 0.5,
+      delay: 2,
       staggerChildren: 0.08,
     },
   },
@@ -23,7 +23,7 @@ const singleword = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1,
+      duration: 2,
     },
   },
 };
@@ -36,7 +36,7 @@ const AnimatedText = ({ text, className = "" }) => {
     "
     >
       <motion.h1
-        className={`inline-block w-full text-dark font-bold capitalize text-8xl 
+        className={`inline-block w-full text-dark font-bold capitalize 
         dark:text-light
         ${className}`}
         variants={quote}

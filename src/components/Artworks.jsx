@@ -96,7 +96,7 @@ const Artworks = ({ textLeave, textEnter }) => {
   }, []);
   return (
     <div className=" text-white items-center ">
-      <div className=" overflow-hidden">
+      <div className=" overflow-hidden relative">
         <div
           onMouseEnter={textEnter}
           onMouseLeave={textLeave}
@@ -104,25 +104,10 @@ const Artworks = ({ textLeave, textEnter }) => {
         >
           Welcome to Artworks
         </div>
-        <div className="flex flex-col relative gap-[10rem] mx-auto max-xl:max-w-[80%] h-[350vh] max-md:h-[250vh] max-md:gap-5">
+        <div className="flex flex-col gap-[11rem] mx-auto max-md:gap-[1rem] max-xl:max-w-[80%] h-[360vh] max-md:h-[300vh]">
           {ArtWorksArr.map((artwork, index) => {
-            const show =
-              scrolled >
-                380 +
-                  index * 500 +
-                  (windowWidth > 1500
-                    ? -index * 20
-                    : windowWidth > 800
-                    ? index * 10
-                    : (index + 1) * 100 - 200 * index) &&
-              scrolled <
-                380 +
-                  index * 500 +
-                  (windowWidth > 1500
-                    ? 300
-                    : windowWidth > 800
-                    ? 350 + 20 * index
-                    : 400 - 100 * index);
+            const add = windowWidth > 780 ? 500 : 380;
+            const show = scrolled > (350 + index * add)  && scrolled < 650 + index * add;
             const margin_val =
               (
                 (windowWidth > 1900
@@ -137,7 +122,7 @@ const Artworks = ({ textLeave, textEnter }) => {
               <>
                 <div
                   key={index}
-                  className={`fixed z-30 top-[50vh] -rotate-90 left-0  overflow-visible`}
+                  className={`fixed z-30 top-[50vh] -rotate-90 left-0 max-sm:-left-10  overflow-visible`}
                 >
                   <animated.div style={dateSpring(show)}>
                     <span
@@ -151,7 +136,7 @@ const Artworks = ({ textLeave, textEnter }) => {
                 </div>
                 <div
                   key={index}
-                  className={`fixed z-30 w-[100%] top-[40vh] left-24 overflow-hidden`}
+                  className={`fixed z-30 w-[100%] top-[40vh] max-sm:left-14 left-24 overflow-hidden`}
                 >
                   <Element name="scrollToElement" class="max-sm:mr-20">
                     <animated.div
@@ -185,25 +170,25 @@ const Artworks = ({ textLeave, textEnter }) => {
                     <img
                       src={artwork.img}
                       alt=""
-                      className="h-[500px] w-[500px] max-lg:scale-[90%] max-xl:ml-[30rem] max-md:ml-[30rem] max-md:scale-75 rounded-lg brightness-75 z-0"
+                      className="h-[500px] w-[500px] max-lg:scale-[90%] max-xl:ml-[30rem] max-md:ml-[30rem] max-md:scale-75 rounded-lg brightness-90 z-0"
                     />
                   </animated.div>
                 </div>
               </>
             );
           })}
-          <Link
-            to = "/more-artworks"
-            onMouseEnter={textEnter}
-            onMouseLeave={textLeave}
-            className="flex absolute hover:text-white text-white bottom-[13rem] left-[45%] gap-5 justify-center flex-col items-center cursor-pointer"
-          >
-            <span className="border text-3xl cursor-pointer border-white rounded-full text-white p-2 ">
-              <FaLongArrowAltRight/>
-            </span>
-            <span className="text-3xl ">Show More</span>
-          </Link>
         </div>
+          <div
+            onMouseEnter={textEnter} onMouseLeave={textLeave}
+            className="flex absolute hover:text-white text-white bottom-[5rem] max-sm:left-[32%] max-md:left-[37%] left-[45%] gap-5 justify-center flex-col items-center"
+          >
+              <Link to = "/more-artworks" className="border hover:text-white  text-3xl cursor-pointer border-white rounded-full text-white p-2 ">
+                <FaLongArrowAltRight/>
+              </Link>
+              <Link to ="/more-artworks" className="text-3xl text-white cursor-pointer">
+                Show More
+              </Link>
+            </div>
       </div>
     </div>
   );
