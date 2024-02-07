@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from './Card'
+import ParticlesContainer from './ParticlesContainer'
 
 const mcolor = "bg-[#40A2E3]"
 const ccolor = "bg-[#F3B95F]"
@@ -140,7 +141,11 @@ function Team() {
         }
     ]
     return (
+        <div>
+            <ParticlesContainer />
         <div className='py-[10rem] flex justify-center'>
+                            
+
             <div className='flex flex-col gap-[10rem]'>
                 {
                     members.map((post) => {
@@ -163,6 +168,7 @@ function Team() {
                     })
                 }
             </div>
+        </div>
         </div>
     )
 }

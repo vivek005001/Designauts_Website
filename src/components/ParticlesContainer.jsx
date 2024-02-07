@@ -59,12 +59,12 @@ const ParticlesContainer = () => {
           },
           move: {
             direction: 'one',
-            enable: false,
+            enable: true,
             outModes: {
               default: "bounce",
             },
             random: false,
-            speed: 1,
+            speed: 0.5,
             straight: false,
           },
           number: {
