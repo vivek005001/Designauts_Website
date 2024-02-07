@@ -38,7 +38,7 @@ function Team() {
                     post: "CO-COORDINATOR",
                     tag: "DAMN",
                     bg: ccolor,
-                    img: "/pfps/Harshit Vyas.png",
+                    img: "/pfps/Harshit_Vyas.png",
                     linkedin: "",
                     instagram: ""
                 },
@@ -47,7 +47,7 @@ function Team() {
                     post: "CO-COORDINATOR",
                     tag: "DAMN",
                     bg: ccolor,
-                    img: "/pfps/Sanket.png",
+                    img: "/pfps/sanket.png",
                     linkedin: "",
                     instagram: ""
                 }
@@ -134,6 +134,15 @@ function Team() {
                     tag: "COOL",
                     bg: mcolor,
                     img: "/pfps/Utkarsh Yadav.png",
+                    linkedin: "",
+                    instagram: ""
+                },
+                {
+                    name: "Divyanshu",
+                    post: "Core Member",
+                    tag: "COOL",
+                    bg: mcolor,
+                    img: "/pfps/divyanshu.png",
                     linkedin: "",
                     instagram: ""
                 },
