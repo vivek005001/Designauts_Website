@@ -141,18 +141,18 @@ function Team() {
         }
     ]
     return (
-        <div>
+        <div className='relative'>
             <ParticlesContainer />
         <div className='py-[10rem] flex justify-center'>
                             
 
-            <div className='flex flex-col gap-[10rem]'>
+            <div className='flex flex-col gap-[0.5rem]'>
                 {
                     members.map((post) => {
                         return (
                             <>
                                 <div className='flex flex-col gap-[5rem]'>
-                                    <div className='text-5xl underline text-center'>{Object.keys(post)}</div>
+                                    <div className='text-5xl  text-center'>{Object.keys(post)}</div>
                                     <div className='flex flex-wrap max-w-[1200px] mt-[1rem] justify-around'>
                                         {
                                             post[Object.keys(post)].map((member) => {
