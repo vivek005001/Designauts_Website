@@ -146,7 +146,37 @@ function Team() {
                     linkedin: "",
                     instagram: ""
                 },
+                {
+                    name: "Arsh Bansal",
+                    post: "Core Member",
+                    tag: "COOL",
+                    bg: mcolor,
+                    img: "/pfps/Arsh.png",
+                    linkedin: "",
+                    instagram: ""
+                },
             ],
+        },
+        {
+            "PAST COORDINATORS": [{
+                name: "Punit Daga",
+                post: "COORDINATOR 2021-22",
+                tag: "COOL",
+                bg: "bg-[#DF7A1C]",
+                img: "/pfps/Punit.png",
+                linkedin: "",
+                instagram: ""
+            },
+            {
+                name: "Shivangi",
+                post: "COORDINATOR 2022-23",
+                tag: "COOL",
+                bg: "bg-[#DF7A1C]",
+                img: "/pfps/shivangi.png",
+                linkedin: "",
+                instagram: ""
+            },
+        ],
         }
     ]
     return (
