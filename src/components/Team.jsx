@@ -1,18 +1,18 @@
 import React from 'react'
 import Card from './Card'
 
-const mcolor = "bg-[#4F709C]"
+const mcolor = "bg-[#40A2E3]"
 const ccolor = "bg-[#F3B95F]"
 
 function Team() {
     const members = [
         {
-            "COORDINATORS": [
+            "COORDINATOR": [
                 {
                     name: "Vivek Aggarwal",
                     post: "COORDINATOR",
                     tag: "DAMN",
-                    bg: "bg-[#B4B4B8]",
+                    bg: "bg-[#DF7A1C]",
                     img: "/pfps/Vivek Aggarwal.png",
                     linkedin: "",
                     instagram: ""
@@ -81,15 +81,7 @@ function Team() {
                     linkedin: "",
                     instagram: ""
                 },
-                {
-                    name: "Aryan Singh",
-                    post: "Core Member",
-                    tag: "COOL",
-                    bg: mcolor,
-                    img: "/pfps/Aryan Singh.png",
-                    linkedin: "",
-                    instagram: ""
-                },
+
                 {
                     name: "Akshat Singh",
                     post: "Core Member",
