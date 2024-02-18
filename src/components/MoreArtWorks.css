@@ -1,37 +1,96 @@
 /* MoreArtWorks.css */
 .card {
-    width: calc(33.33% - 20px); /* Maximum 3 cards in a row with some margin */
-    overflow: hidden;
-    perspective: 1000px;
-  }
-  
-  .card-inner {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-  }
-  
-  .card:hover .card-inner {
-    transform: rotateY(180deg);
-    transition: 1s;
-  }
-  .card:hover .card-image{
-    filter:brightness(25%)
+  width: calc(33.33% - 20px); /* Maximum 3 cards in a row with some margin */
+  overflow: hidden;
+  perspective: 1000px;
 }
-  .card-image {
-    width: 100%;
-    height: auto;
-  }
-  .card-content {
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: black;
-    transform: rotateY(180deg);
-    border: 2px solid white;
-    backface-visibility: hidden;
-    top: 0;
-  }
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+  transition: 1s;
+}
+.card:hover .card-image {
+  filter: brightness(25%);
+}
+.card-image {
+  width: 100%;
+  height: auto;
+}
+.card-content {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: black;
+  transform: rotateY(180deg);
+  border: 2px solid white;
+  backface-visibility: hidden;
+  top: 0;
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centered-container form {
+  width: 300px;
+}
+
+.centered-container form div {
+  margin-bottom: 20px;
+}
+
+.centered-container form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.centered-container form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
+
+.centered-container form button {
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #262626;
+}
+
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.file-input {
+  padding: 10px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #000000;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+.file-input:hover,
+.file-input:focus {
+  border-color: #000588;
+}
