@@ -4,6 +4,7 @@ import ParticlesContainer from "./ParticlesContainer";
 
 const mcolor = "bg-[#40A2E3]";
 const ccolor = "bg-[#F3B95F]";
+const pccolor = "bg-[#E05656]";
 
 function Team() {
   const members = [
@@ -13,7 +14,7 @@ function Team() {
           name: "Vivek Aggarwal",
           post: "COORDINATOR",
           tag: "DAMN",
-          bg: "bg-[#F28D16]",
+          bg: "bg-[#EF9C50]",
           img: "/pfps/Vivek Aggarwal.png",
           linkedin: "",
           instagram: "",
@@ -206,7 +207,7 @@ function Team() {
           name: "Shivangi",
           post: "COORDINATOR 22-23'",
           tag: "COOL",
-          bg: "bg-[#DE4343]",
+          bg: pccolor,
           img: "/pfps/shivangi.png",
           linkedin: "",
           instagram: "",
@@ -215,8 +216,17 @@ function Team() {
           name: "Punit Daga",
           post: "COORDINATOR 21-22'",
           tag: "COOL",
-          bg: "bg-[#DE4343]",
+          bg: pccolor,
           img: "/pfps/Punit.png",
+          linkedin: "",
+          instagram: "",
+        },
+        {
+          name: "Kalyani A.",
+          post: "COORDINATOR 19-20'",
+          tag: "COOL",
+          bg: pccolor,
+          img: "/pfps/Kalyani.png",
           linkedin: "",
           instagram: "",
         },
@@ -224,7 +234,7 @@ function Team() {
             name: "Amit Chauhan",
             post: "COORDINATOR 18-19'",
             tag: "COOL",
-            bg: "bg-[#DE4343]",
+            bg: pccolor,
             img: "/pfps/Amit.png",
             linkedin: "",
             instagram: "",
@@ -233,11 +243,12 @@ function Team() {
             name: "Pratyush G.",
             post: "COORDINATOR 17-18'",
             tag: "COOL",
-            bg: "bg-[#DE4343]",
+            bg: pccolor,
             img: "/pfps/Pratyush.png",
             linkedin: "",
             instagram: "",
           },
+          
       ],
     },
   ];
