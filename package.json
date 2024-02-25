@@ -10,10 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.99.4",
     "firebase": "^10.8.0",
     "flowbite-react": "^0.7.2",
+    "framer": "^2.4.1",
     "framer-motion": "^10.18.0",
     "hamburger-react": "^2.5.0",
+    "motion": "^10.17.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
