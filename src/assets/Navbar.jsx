@@ -59,7 +59,7 @@ function Navbar({ textLeave, textEnter }) {
 
   return (
     <header className="relative">
-      <div className="fixed top-0 w-full z-50" onMouseEnter={textEnter} onMouseLeave={textLeave}>
+      <div className="fixed top-0 w-full z-[2000]" onMouseEnter={textEnter} onMouseLeave={textLeave}>
         <div className="flex items-center p-4 py-8 mb-10 mt-2 h-14 mx-auto max-w-7xl text-white">
           <motion.div
             initial={{ opacity: 0 }}

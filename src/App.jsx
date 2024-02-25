@@ -30,7 +30,13 @@ function App() {
       })
     }
 
-    window.addEventListener("mousemove", mouseMove);
+    if(window.innerWidth < 1000) 
+    {
+      setMousePosition({x:-1000,y:-1000});
+    }
+    else {
+      window.addEventListener("mousemove", mouseMove);
+    }
 
     return () => {
       window.removeEventListener("mousemove", mouseMove);

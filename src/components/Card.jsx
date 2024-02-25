@@ -31,7 +31,7 @@ function Card({ name, post, tag, img, linkedin, instagram, bg }) {
 
   return (
     <Tilt options={defaultSettings}>
-      <div className="container w-[300px] px-5 mb-24 flex flex-col justify-center items-center cursor-pointer">
+      <div className="container max-h-[800px] w-[320px] z-30 px-5 mb-24 flex flex-col justify-center items-center cursor-pointer">
         <div className="imgbox">
 
         </div>
@@ -46,7 +46,7 @@ function Card({ name, post, tag, img, linkedin, instagram, bg }) {
           }
         </div>
         <span className="bgtext">{tag}</span>
-        <div className="title">{name}</div>
+        <div className="title text-nowrap">{name}</div>
         {post &&
           <div className="flex gap-3 justify-evenly items-center text-3xl text-white overflow-hidden">
             <a href={linkedin} className="text-white icon hover:text-white  " target="_blank" rel="noopener noreferrer">

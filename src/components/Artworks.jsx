@@ -104,7 +104,7 @@ const Artworks = ({ textLeave, textEnter }) => {
         >
           Welcome to Artworks
         </div>
-        <div className="flex flex-col gap-[11rem] mx-auto max-md:gap-[1rem] max-xl:max-w-[80%] h-[360vh] max-md:h-[300vh]">
+        <div className="flex flex-col gap-[11rem] mx-auto max-md:gap-[1rem] max-xl:max-w-[80%] h-[360vh] max-md:h-[295vh] max-sm:h-[300vh]">
           {ArtWorksArr.map((artwork, index) => {
             const add = windowWidth > 780 ? 500 : 380;
             const show = scrolled > (350 + index * add)  && scrolled < 650 + index * add;

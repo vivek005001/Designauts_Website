@@ -5,7 +5,7 @@ import ParticlesContainer from './ParticlesContainer'
 const mcolor = "bg-[#40A2E3]"
 const ccolor = "bg-[#F3B95F]"
 
-function Team() {
+function Team({ textLeave, textEnter }) {
     const members = [
         {
             "COORDINATOR": [
@@ -141,18 +141,20 @@ function Team() {
         }
     ]
     return (
-        <div className='relative'>
-            <ParticlesContainer />
+        <div >
+            <div className='relative'>
+                <ParticlesContainer />
+            </div>
         <div className='py-[10rem] flex justify-center'>
                             
 
-            <div className='flex flex-col gap-[0.5rem]'>
+            <div className='flex flex-col gap-[0.5rem]' onMouseEnter={textEnter} onMouseLeave={textLeave}>
                 {
                     members.map((post) => {
                         return (
                             <>
                                 <div className='flex flex-col gap-[5rem]'>
-                                    <div className='text-5xl  text-center'>{Object.keys(post)}</div>
+                                    <div className='text-5xl max-sm:text-4xl  text-center'>{Object.keys(post)}</div>
                                     <div className='flex flex-wrap max-w-[1200px] mt-[1rem] justify-around'>
                                         {
                                             post[Object.keys(post)].map((member) => {
