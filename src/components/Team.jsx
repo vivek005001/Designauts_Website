@@ -6,7 +6,7 @@ const mcolor = "bg-[#40A2E3]";
 const ccolor = "bg-[#F3B95F]";
 const pccolor = "bg-[#E05656]";
 
-function Team() {
+function Team({ textLeave, textEnter }) {
   const members = [
     {
       COORDINATOR: [
@@ -253,15 +253,17 @@ function Team() {
     },
   ];
   return (
-    <div className="relative">
-      <ParticlesContainer />
-      <div className="py-[10rem] flex justify-center">
+    <div className="relative" >
+      <div>
+        <ParticlesContainer />
+      </div>
+      <div className="py-[10rem] flex justify-center" onMouseEnter={textEnter} onMouseLeave={textLeave}>
         <div className="flex flex-col gap-[0.5rem]">
           {members.map((post) => {
             return (
               <>
                 <div className="flex flex-col gap-[5rem]">
-                  <div className="text-5xl  text-center">
+                  <div className="text-5xl  text-center" onMouseEnter={textEnter} onMouseLeave={textLeave}>
                     {Object.keys(post)}
                   </div>
                   <div className="flex flex-wrap max-w-[1200px] mt-[1rem] justify-around">
@@ -275,6 +277,7 @@ function Team() {
                           linkedin={member.linkedin}
                           instagram={member.instagram}
                           bg={member.bg}
+                          customCss = {Object.keys(post) === "PAST COORDINATOR" ? "text-wrap" : "text-nowrap"}
                         />
                       );
                     })}

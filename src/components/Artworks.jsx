@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Artworks = ({ textLeave, textEnter }) => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
-  }, [])
+  }, []);
   const ArtWorksArr = [
     {
       title: "PEKKA",
@@ -64,7 +64,7 @@ const Artworks = ({ textLeave, textEnter }) => {
         ? "0.1em"
         : windowWidth < 800
         ? windowWidth < 500
-          ? "0.15em"
+          ? "0.05em"
           : "0.3em"
         : "0.8em",
     });
@@ -104,10 +104,11 @@ const Artworks = ({ textLeave, textEnter }) => {
         >
           Welcome to Artworks
         </div>
-        <div className="flex flex-col gap-[11rem] mx-auto max-md:gap-[1rem] max-xl:max-w-[80%] h-[360vh] max-md:h-[295vh] max-sm:h-[300vh]">
+        <div className="flex flex-col gap-[11rem] mx-auto max-md:gap-[1rem] max-xl:max-w-[80%] h-[2500px] max-md:h-[295vh] max-sm:h-[300vh]">
           {ArtWorksArr.map((artwork, index) => {
             const add = windowWidth > 780 ? 500 : 380;
-            const show = scrolled > (350 + index * add)  && scrolled < 650 + index * add;
+            const show =
+              scrolled > 350 + index * add && scrolled < 650 + index * add;
             const margin_val =
               (
                 (windowWidth > 1900
@@ -178,17 +179,26 @@ const Artworks = ({ textLeave, textEnter }) => {
             );
           })}
         </div>
-          <div
-            onMouseEnter={textEnter} onMouseLeave={textLeave}
-            className="flex absolute hover:text-white text-white bottom-[5rem] max-sm:left-[32%] max-md:left-[37%] left-[45%] gap-5 justify-center flex-col items-center"
-          >
-              <Link to = "/more-artworks" className="border hover:text-white  text-3xl cursor-pointer border-white rounded-full text-white p-2 ">
-                <FaLongArrowAltRight/>
-              </Link>
-              <Link to ="/more-artworks" className="text-3xl text-white cursor-pointer">
-                Show More
-              </Link>
-            </div>
+        <div
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
+          className="flex absolute hover:text-white text-white bottom-[5rem] max-sm:left-[35%] max-md:left-[40%] left-[45%] gap-5 justify-center flex-col items-center"
+        >
+          <div className="flex flex-col gap-3 items-center">
+            <Link
+              to="/more-artworks"
+              className="text-3xl text-white hover:text-white cursor-pointer border border-white rounded-full p-2"
+            >
+              <FaLongArrowAltRight/>
+            </Link>
+            <Link
+              to="/more-artworks"
+              className="text-3xl text-white hover:text-white cursor-pointer"
+            >
+              Show More
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
