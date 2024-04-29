@@ -252,6 +252,7 @@ function Team({ textLeave, textEnter }) {
       ],
     },
   ];
+
   return (
     <div className="relative" >
       <div>
@@ -259,7 +260,7 @@ function Team({ textLeave, textEnter }) {
       </div>
       <div className="py-[10rem] flex justify-center" onMouseEnter={textEnter} onMouseLeave={textLeave}>
         <div className="flex flex-col gap-[0.5rem]">
-          {members.map((post) => {
+          {members.map((post) => {  
             return (
               <>
                 <div className="flex flex-col gap-[5rem]">
@@ -277,9 +278,9 @@ function Team({ textLeave, textEnter }) {
                           linkedin={member.linkedin}
                           instagram={member.instagram}
                           bg={member.bg}
-                          customCss = {Object.keys(post) === "PAST COORDINATOR" ? "text-wrap" : "text-nowrap"}
+                          customCss = {Object.keys(post)[0] === "PAST COORDINATORS" ? " text-wrap" : " text-nowrap"}
                         />
-                      );
+                      );  
                     })}
                   </div>
                 </div>

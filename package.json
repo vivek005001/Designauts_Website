@@ -27,6 +27,7 @@
     "react-tilt": "^1.0.2",
     "react-tsparticles": "^2.12.2",
     "react-use": "^17.4.3",
+    "styled-components": "^6.1.8",
     "tsparticles": "^2.0.6",
     "uuid": "^9.0.1"
   },

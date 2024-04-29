@@ -52,7 +52,7 @@
 
 .container:hover .icon {
     transform: translateY(0px);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 
 .icon {
@@ -68,7 +68,7 @@
     border-radius: 50%;
     top: 5%;
     left: 15%;
-    transition: 0.3s ease-in;
+    transition: 0.5s ease-in;
 }
 
 .bgtext {
@@ -80,7 +80,7 @@
     opacity: 0.4;
     color: transparent;
     z-index: -1;
-    transition: 0.6ss ease-in;
+    transition: 0.6s ease-in;
 }
 
 .title {
@@ -89,5 +89,5 @@
     text-align: center;
     color: #fff;
     word-spacing: 2px;
-    transition: 0.3s ease;
+    transition: 0.5s ease;
 }

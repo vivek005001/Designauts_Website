@@ -31,7 +31,7 @@ function Card({ name, post, tag, img, linkedin, instagram, bg, customCss }) {
 
   return (
     <Tilt options={defaultSettings}>
-      <div className="container max-h-[800px] w-[320px] z-30 px-5 mb-24 flex flex-col justify-center items-center cursor-pointer">
+      <div className="container max-h-[480px] w-[320px] z-30 px-5 mb-24 flex flex-col justify-center items-center cursor-pointer">
         <div className="imgbox">
 
         </div>
