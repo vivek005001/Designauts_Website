@@ -270,6 +270,46 @@ function Team({ textLeave, textEnter }) {
         },
       ],
     },
+    {
+      "DEVELOPERS": [
+        {
+          name: "Vivek Aggarwal",
+          post: "Developer",
+          tag: "COOL",
+          bg: pccolor,
+          img: "/pfps/Vivek Aggarwal.png",
+          linkedin: "",
+          instagram: "",
+        },
+        {
+          name: "Luv Sharma",
+          post: "Developer",
+          tag: "COOL",
+          bg: pccolor,
+          img: "/pfps/Luv Sharma.png",
+          linkedin: "",
+          instagram: "",
+        },
+        {
+          name: "Shubh Sahu",
+          post: "Developer",
+          tag: "COOL",
+          bg: pccolor,
+          img: "/pfps/Shubh Sahu.png",
+          linkedin: "",
+          instagram: "",
+        },
+        {
+          name: "RC Manish",
+          post: "Developer'",
+          tag: "COOL",
+          bg: pccolor,
+          img: "/pfps/R C Manish.png",
+          linkedin: "",
+          instagram: "",
+        },
+      ],
+    },
   ];
 
   return (
